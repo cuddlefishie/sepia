@@ -1,7 +1,7 @@
 # Sepia language requirements
 
 
-mathematical / calculator requirements:
+## Mathematical / calculator requirements
 
 - infinite precision decimal numbers
 - units and unit aliases
@@ -10,7 +10,7 @@ mathematical / calculator requirements:
   - both `exact` and `approximation` can be builtin values as they should propagate properly
   - `exact` is the default
   - (optional) support for uncertainty percentages `100 Ohm ± 5%`
-- significant figures tracking and a special REPL mode for default rounding based on sigfigs
+- (optional) significant figures tracking and a special REPL mode for default rounding based on sigfigs
 
 - vectors/tuples `(1, 2, 3)`
 - (optional) range values `[0.01 .. 1.0]`
@@ -24,7 +24,7 @@ mathematical / calculator requirements:
 - querying variables by unit
 
 
-programming requirements:
+## Programming requirements
 
 - references for mutable values
   ```
@@ -51,10 +51,21 @@ programming requirements:
   - implemented as tables?
 
 
-syntax requirements:
+## Syntax requirements
 
 - semicolon inference (lines can only continue with indentation)
 - juxtaposition multiplication
 - (to be debated) grouping based on whitespace `1 / x+1` = `1 / (x + 1)`
 - unicode powers/subscripts, sqrt, symbols(π, Δ etc)
 - `()` and `[]` as grouping symbols
+
+
+## Implementation goals
+
+- easily embeddable
+- runnable via WASM and in the browser
+
+## Non-goals
+
+- static typing
+- compilation to native code
