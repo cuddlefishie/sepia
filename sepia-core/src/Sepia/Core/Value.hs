@@ -3,9 +3,9 @@ module Sepia.Core.Value where
 import Sepia.Core.Number
 import Sepia.Core.Unit
 
-data Value where
-  VNumber :: Number -> Unit -> Value
-  VVector :: [Value] -> Value
+data Value
+  = VNumber Number Unit
+  | VVector [Value]
   deriving (Eq)
 
 showValue :: Value -> String

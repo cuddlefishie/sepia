@@ -18,15 +18,15 @@ spanCombine a b = a
 
 type Identifier = String
 
-data Item where
-  IBaseUnitDef :: Spanned Identifier -> Item
-  IUnitAliasDef :: Spanned Identifier -> Spanned Expression -> Item
-  IVariableDef :: Spanned Identifier -> Spanned Expression -> Item
+data Item
+  = IBaseUnitDef (Spanned Identifier)
+  | IUnitAliasDef (Spanned Identifier) (Spanned Expression)
+  | IVariableDef (Spanned Identifier) (Spanned Expression)
 
-data Expression where
-  ENumber :: Spanned Number -> Expression
-  EVariable :: Spanned Identifier -> Expression
-  EBinOp :: Spanned BinOp -> Spanned Expression -> Spanned Expression -> Expression
+data Expression
+  = ENumber (Spanned Number)
+  | EVariable (Spanned Identifier)
+  | EBinOp (Spanned BinOp) (Spanned Expression) (Spanned Expression)
 
 data BinOp
   = OpAdd

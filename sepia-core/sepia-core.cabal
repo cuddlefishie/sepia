@@ -27,7 +27,6 @@ extra-source-files: CHANGELOG.md
 
 common common-options
     default-extensions:
-        GADTs
         NamedFieldPuns
         TypeApplications
         FlexibleInstances
