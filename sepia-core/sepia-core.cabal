@@ -1,0 +1,47 @@
+cabal-version:      3.0
+name:               sepia-core
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            EUPL-1.2
+license-file:       LICENSE
+
+-- The package author(s).
+-- author:
+
+-- An email address to which users can send suggestions, bug reports, and patches.
+-- maintainer:
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+
+common common-options
+    default-extensions:
+        GADTs
+        NamedFieldPuns
+        TypeApplications
+        FlexibleInstances
+
+library
+    import: common-options
+    hs-source-dirs: src
+    exposed-modules:
+        Sepia.Core.Eval
+        Sepia.Core.Unit
+        Sepia.Core.Value
+        Sepia.Core.Number
+        Sepia.Core.Syntax
+    default-language: Haskell2010
+    build-depends: base >= 4.10 && < 5,
+                   containers,
+                   mtl
